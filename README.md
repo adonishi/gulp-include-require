@@ -12,13 +12,15 @@ Simple CommonJS style require() by including file.
 ## usage
 
 ```
-npm install --save-dev file:/path/to/gulp-include-require
+npm install --save-dev gulp-include-require
 ```
 
-and in `gulpfile.js`
-
+* `gulpfile.js`
 ```
+...
 var includeRequire = require("gulp-include-require");
+
+...
 
 gulp.src("./src/*.js")
     .pipe(sourcemaps.init())
@@ -29,13 +31,15 @@ gulp.src("./src/*.js")
 
 ## example
 
-```src/moduleA.js
+* `src/moduleA.js`
+```
 module.exports = function( value ){
     return value*2;
 }
 ```
 
-```src/moduleB.js
+* `src/moduleB.js`
+```
 var multiplyBy2 = require('./moduleA');
 var result = multiplyBy2( 4 );
 ```
@@ -43,12 +47,12 @@ var result = multiplyBy2( 4 );
 after this gulp plugin.
 
 ```dist/result.js
-var multiplyBy2 = var config = (function(){
+var multiplyBy2 = (function(){
   var module = {};
   var exports = {};
   module.exports = function( value ){
-      return value*2;
-  }
+    return value*2;
+}
 
   return module.exports || exports;
 })() ;
@@ -56,4 +60,4 @@ var result = multiplyBy2( 4 );
 ```
 
 ----
-[README from original gulp-include](./README-gulp-include.md)
+Based on gulp-include. [README from original gulp-include](./README-gulp-include.md)
