@@ -1,0 +1,36 @@
+{
+  "name": "gulp-include-require",
+  "version": "0.1.0",
+  "description": "Simple CommonJS style require() by including file.",
+  "homepage": "http://github.com/adonishi/gulp-include-require",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/adonishi/gulp-include-require.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "gulpplugin"
+  ],
+  "author": {
+    "name": "Ado Nishimura"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "~3.3.4",
+    "mocha": "~1.17.0",
+    "should": "~2.1.1",
+    "gulp-sourcemaps": "^1.1.4",
+    "stream-assert": "^2.0.1"
+  },
+  "dependencies": {
+    "event-stream": "~3.1.0",
+    "glob": "^5.0.12",
+    "gulp-util": "~2.2.10",
+    "source-map": "^0.5.1",
+    "strip-bom": "^2.0.0",
+    "vinyl-sourcemaps-apply": "^0.2.0"
+  }
+}
