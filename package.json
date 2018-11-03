@@ -1,6 +1,6 @@
 {
   "name": "gulp-include-require",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple CommonJS style require() by including file.",
   "homepage": "http://github.com/adonishi/gulp-include-require",
   "repository": {
@@ -26,9 +26,10 @@
     "stream-assert": "^2.0.1"
   },
   "dependencies": {
+    "ansi-colors": "^3.2.1",
     "event-stream": "~3.1.0",
     "glob": "^5.0.12",
-    "gulp-util": "~2.2.10",
+    "plugin-error": "^1.0.1",
     "source-map": "^0.5.1",
     "strip-bom": "^2.0.0",
     "vinyl-sourcemaps-apply": "^0.2.0"
