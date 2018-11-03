@@ -1,7 +1,8 @@
 var fs = require('fs'),
     path = require('path'),
     es = require('event-stream'),
-    gutil = require('gulp-util'),
+    colors = require('ansi-colors'),
+    pluginError = require('plugin-error'),
     glob = require('glob'),
     applySourceMap = require('vinyl-sourcemaps-apply'),
     stripBom = require('strip-bom');
@@ -49,7 +50,7 @@ module.exports = function (params) {
     }
 
     if (file.isStream()) {
-      throw new gutil.PluginError('gulp-include', 'stream not supported');
+      throw new pluginError('gulp-include', 'stream not supported');
     }
 
     if (file.isBuffer()) {
@@ -287,12 +288,11 @@ module.exports = function (params) {
 
   function fileNotFoundError(includePath) {
     if (hardFail) {
-      throw new gutil.PluginError('gulp-include', 'No files found matching ' + includePath);
+      throw new pluginError('gulp-include', 'No files found matching ' + includePath);
     }else{
       console.warn(
-        gutil.colors.yellow('WARN: ') +
-        gutil.colors.cyan('gulp-include') +
-        ' - no files found matching ' + includePath
+        colors.yellow('WARN: ') +
+        colors.cyan('gulp-include') + ' - no files found matching ' + includePath
       );
     }
   }
